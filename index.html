@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PyScript Info Showcase</title>
+
+    <!-- PyScript -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.8.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2025.8.1/core.js"></script>
+
+
+
+    <!-- PyScript Config -->
+    <py-config>
+        packages = ["pyscript"]
+    </py-config>
+</head>
+<body class="container mt-5">
+    <h1 class="mb-4">String Showcase: My Basic Info</h1>
+
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <label>Name:</label>
+            <input type="text" id="name" placeholder="Enter name" class="form-control">
+        </div>
+        <div class="col-md-4">
+            <label>Age:</label>
+            <input type="text" id="age" placeholder="Enter age" class="form-control">
+        </div>
+        <div class="col-md-4">
+            <label>School:</label>
+            <input type="text" id="school" placeholder="Enter your school" class="form-control">
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary mb-3" py-click="show_info()">Generate</button>
+
+    <div id="output" class="alert alert-info" style="display:none;"></div>
+
+    <!-- Python Code -->
+    <py-script>
+
+
+def show_info(event):
+
+
+
+
+    name = Element("name").element.value
+    age = Element("age").element.value
+    school = Element("school").element.value
+
+    info = f"Hello, my name is {name}. I am {age} years old and I go to {school}."
+    output = Element("output").element
+    output.innerText = info
+    output.style.display = "block"
+    </py-script>
+</body>
+</html>
